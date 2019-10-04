@@ -1,10 +1,14 @@
 .header{
   padding: 1rem 0 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title{
-  color: #000;
-  font-size: 3rem;
+  color: #fff;
+  font-size: 1.5rem;
+  flex: 1;
   text-decoration: none;  
 }
 
@@ -12,14 +16,23 @@
   display: flex;
   list-style-type: none;
   margin: 0;
+  flex: 1;
+  text-align: right;
+  background: transparent;
+  border: none;
+  z-index: 1000;
+  .navItem{
+    a{
+      background: transparent;
+      color: #2c2c2c;
+      font-weight: 800;
+    }
+    &.contactBtn{
+      border-bottom: none ;
+    }
+  }
 }
 
-.navItem{
-  color: #777;
-  font-size: 0.9rem;
-  margin-right: 1.3rem;
-  text-decoration: none;
-}
 
 .navItem:hover{
   color: #111;
@@ -29,3 +42,4 @@
   color: #000;
   font-weight: bold;
 }
+

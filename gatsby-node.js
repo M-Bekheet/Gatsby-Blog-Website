@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const blogTemplate = path.resolve('./src/templates/blog.js');
+  const post = path.resolve('./src/templates/post.js');
   const res = await graphql(`
     query{
       allContentfulBlogPost{
@@ -20,11 +20,22 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   res.data.allContentfulBlogPost.edges.forEach(edge => {
     createPage({
-      component: blogTemplate,
+      component: post,
       path: `/blog/${edge.node.slug}`,
       context: {
         slug: edge.node.slug
       }
     })
   })
+}
+
+
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig()
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom'
+    }
+  }
 }

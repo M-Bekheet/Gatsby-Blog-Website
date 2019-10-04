@@ -6,10 +6,22 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Blog Website',
-    author: 'Mahmoud Ahmed'
+    title: 'Mahmoud Qasem',
+    author: 'Mahmoud Qasem'
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-less",
+      options: {
+        javascriptEnabled: true,
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        style: true
+      }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
@@ -39,8 +51,16 @@ module.exports = {
               linkImagesToOriginal: false,
               backgroundColor: 'none'
             }
-          }
+          },
         ]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto:400,700']
+        }
       }
     }
   ]
