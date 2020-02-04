@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import indexStyles from './index.module.scss';
 import developerImg from './images/developer.png';
 import { Button } from 'antd';
+import { Link } from 'gatsby'
 
 //homepage sections
 import About from '../components/homeSections/about'; 
@@ -19,9 +20,13 @@ const IndexPage = () => {
             <Head title="Home"/>
             <div className={indexStyles.heroContent}>
               <div className={indexStyles.heroText}>
-                <h1 className={indexStyles.heroTitle}>Hello</h1>
-                <p className={indexStyles.heroInfo}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aliquam voluptates ipsam earum accusantium explicabo sunt asperiores tenetur modi obcaecati eaque ipsum maiores placeat, vero commodi facilis impedit labore veritatis!</p>
-                <Button className={indexStyles.button} shape="round">Read More</Button>
+                <h1 className={indexStyles.heroTitle}>Hi There</h1>
+                <p className={indexStyles.heroInfo}>Welcome to me website. I am a JavaScript Developer with intensive focus on building web apps in ReactJS</p>
+                <Button className={indexStyles.button} shape="round">
+                  <Link to="/#About">
+                    Read More About Me
+                  </Link>
+                </Button>
               </div>
             </div>
       </div>

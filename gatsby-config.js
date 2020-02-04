@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Mahmoud Qasem',
-    author: 'Mahmoud Qasem'
+    title: 'Mahmoud Ahmed',
+    author: 'Mahmoud Ahmed'
   },
   plugins: [
     {
@@ -59,7 +59,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto:400,700']
+          families: ['Roboto:400,700', 'Black Han Sans']
         }
       }
     }
